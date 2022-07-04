@@ -16,13 +16,10 @@ def sendLog(logger, message):
     print(r.text)
 
 
-def getDataFromServer():
-    delay_times = []
-    r = requests.get(URL + 'api/station/')
-    stations = r.json()
-    for station in stations:
-        delay_times.append(station['delay_time'])
-    return delay_times
+def getDelayTimeFromServer(id):
+    r = requests.get(URL + 'api/station/' + id)
+    station = r.json()
+    return station['delay_time']
 
 # station_type = 0 -> Stacja ; station_type = 1 -> Grzybiarnia
 

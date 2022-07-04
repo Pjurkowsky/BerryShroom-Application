@@ -1,0 +1,7 @@
+{
+    "sketch": "arduino_nano_dummy_mega.ino",
+    "output": "build",
+    "configuration": "cpu=atmega168",
+    "board": "arduino:avr:nano",
+    "port": "COM3"
+}

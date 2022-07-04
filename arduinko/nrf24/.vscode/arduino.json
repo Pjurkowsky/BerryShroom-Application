@@ -1,0 +1,7 @@
+{
+    "sketch": "nrf24.ino",
+    "output": "build",
+    "configuration": "cpu=atmega328old",
+    "board": "arduino:avr:nano",
+    "port": "COM5"
+}

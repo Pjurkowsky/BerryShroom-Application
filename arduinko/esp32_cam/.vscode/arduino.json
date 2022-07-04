@@ -1,0 +1,7 @@
+{
+    "sketch": "esp32_cam.ino",
+    "output": "build",
+    "configuration": "cpu=atmega168",
+    "board": "arduino:avr:nano",
+    "port": "COM5"
+}

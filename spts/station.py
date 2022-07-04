@@ -6,7 +6,7 @@ import time
 import traceback
 import pigpio
 import subprocess
-from spts import sendPayloadToStation, sendLog
+from spts import *
 from nrf24 import *
 URL = "http://127.0.0.1:8000/"
 
@@ -32,19 +32,21 @@ if __name__ == "__main__":
     nrf.set_address_bytes(len(address))
 
     # Listen on the address specified as parameter
-    nrf.open_reading_pipe(RF24_RX_ADDR.P1, address)
+
     nrf.show_registers()
 
     # if everything went correct send log to server that it is working
     sendLog("DEBUG", "station.py is now running")
     try:
         while True:
+
             count = 0
             is_data_being_received = True
             data = ''
             data_json = ''
 
             while is_data_being_received:
+                nrf.open_reading_pipe(RF24_RX_ADDR.P1, address)
                 while nrf.data_ready():
 
                     payload = nrf.get_payload()
@@ -67,6 +69,16 @@ if __name__ == "__main__":
 
                 time.sleep(0.1)
             station_name = data_json['name']
+
+            delay_time = getDelayTimeFromServer(data_json['id'])
+            nrf.open_writing_pipe(RF24_RX_ADDR.P1, address)
+            payload2 = struct.pack(">BiB", 0x01, delay_time, 0xC8)
+            nrf.send(payload2)
+            try:
+                nrf.wait_until_sent()
+            except TimeoutError:
+                print('Timeout waiting for transmission to complete.')
+                continue
             print()
             print(f'Receive from {address} {station_name}')
             sendLog("DEBUG", f'Receive data from {address} {station_name}')
