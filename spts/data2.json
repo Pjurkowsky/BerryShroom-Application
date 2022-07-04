@@ -1,0 +1,104 @@
+{
+    "index": 0,
+    "name": "Grzybiarnia",
+    "display_name": "wololo",
+    "delay_time": 120,
+    "relays": [
+        {
+          "index": 0,
+          "display_name": "Kuchnia",
+          "name": "Relay 0",
+          "state": true,
+          "mode": "MANUAL",
+          "t_on": "00:00:12",
+          "t_off": "23:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        },
+        {
+          "index": 1,
+          "display_name": "",
+          "name": "Relay 1",
+          "state": false,
+          "mode": "AUTO",
+          "t_on": "00:00:00",   
+          "t_off": "00:00:00",
+          "interval": 6,
+          "hysteresis": 2,
+          "set_value": 200
+        },
+        {
+          "index": 2,
+          "display_name": "",
+          "name": "Relay 2",
+          "state": true,
+          "mode": "MANUAL",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 20
+        },
+        {
+          "index": 3,
+          "display_name": "",
+          "name": "Relay 3",
+          "state": true,
+          "mode": "MANUAL",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        },
+        {
+          "index": 4,
+          "display_name": "Kuchnia",
+          "name": "Relay 4",
+          "state": true,
+          "mode": "TIME_1",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        },
+        {
+          "index": 5,
+          "display_name": "",
+          "name": "Relay 5",
+          "state": true,
+          "mode": "AUTO",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        },
+        {
+          "index": 6,
+          "display_name": "",
+          "name": "Relay 6",
+          "state": true,
+          "mode": "AUTO",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        },
+        {
+          "index": 7,
+          "display_name": "",
+          "name": "Relay 7",
+          "state": false,
+          "mode": "MANUAL",
+          "t_on": "00:00:00",
+          "t_off": "00:00:00",
+          "interval": 10,
+          "hysteresis": 3,
+          "set_value": 90
+        }
+      ]
+}

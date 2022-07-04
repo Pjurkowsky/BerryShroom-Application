@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "station.py", line 43, in <module>
+    while nrf.data_ready():
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/nrf24/nrf24.py", line 758, in data_ready
+    status = self.get_status()
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/nrf24/nrf24.py", line 808, in get_status
+    return self._nrf_command(self.NOP)[0]
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/nrf24/nrf24.py", line 862, in _nrf_command
+    return self._nrf_xfer(arg)
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/nrf24/nrf24.py", line 855, in _nrf_xfer
+    b, d = self._pi.spi_xfer(self._spi_handle, data)
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/pigpio.py", line 4040, in spi_xfer
+    self.sl, _PI_CMD_SPIX, handle, 0, len(data), [data]))
+  File "/home/pi/Dev/djangostation2/venv/lib/python3.7/site-packages/pigpio.py", line 1085, in _pigpio_command_ext_nolock
+    dummy, res = struct.unpack('12sI', sl.s.recv(_SOCK_CMD_LEN))
+struct.error: unpack requires a buffer of 16 bytes
+Connecting to GPIO daemon on localhost:8888 ...
+Registers:
+----------
+CONFIG: (0x0f) => RX_DR IRQ, TX_DS IRQ, MAX_RT IRQ, CRC on, CRC 2 byte, Power up, RX
+EN_AA: (0x3f) => P0:ACK P1:ACK P2:ACK P3:ACK P4:ACK P5:ACK 
+EN_RXADDR: (0x03) => P0:on P1:on P2:off P3:off P4:off P5:off 
+SETUP_AW: (0x03) => address width bytes 5
+SETUP_RETR: (0x1f) => retry delay 500 us, retries 15
+RF_CH: (0x64) => channel=100
+RF_SETUP: (0x21) => no continuous carrier, no force PLL lock, 250 kbps, -18 dBm
+STATUS: (0x0e) => no RX data, no TX, TX retries ok, no pipe data, TX FIFO not full
+OBSERVE_TX: (0x00) => lost packets 0, retries 0
+RPD: (0x00) => received power detector 0
+RX ADDR_PX: P0=0xe7e7e7e7e7 P1=0x52534e5331 P2=0xc3 P3=0xc4 P4=0xc5 P5=0xc6
+TX_ADDR: 0xe7e7e7e7e7 
+RX_PW_PX: P0=00 P1=00 P2=00 P3=00 P4=00 P5=00 
+FIFO_STATUS: (0x11) => TX reuse not set, TX FIFO empty, RX FIFO empty
+DYNPD: (0x02) => P0:off P1:on P2:off P3:off P4:off P5:off 
+FEATURE: (0x04) => Dynamic payload on, ACK payload off, W_TX_PAYLOAD_NOACK off
+----------
